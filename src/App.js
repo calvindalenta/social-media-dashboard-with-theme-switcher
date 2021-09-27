@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './components/styled/GlobalStyles';
-import { darkTheme } from './components/styled/Theme';
+import { darkTheme, lightTheme } from './components/styled/Theme';
 
 import Container from './components/styled/Container';
 import CardWrapper from './components/styled/CardWrapper';
@@ -15,6 +15,7 @@ import DashboardHeaderText from './components/styled/DashboardHeaderText';
 import DarkMode from './components/styled/DarkMode';
 
 import Switch from "react-switch";
+import { useState } from 'react';
 
 
 function resolveSocialImage(platform){
@@ -43,8 +44,15 @@ function App() {
     />
   });
 
+  const [toggle, setToggle] = useState(false);
+  const selectedTheme = toggle ? darkTheme : lightTheme;
+
+  function handleSwitch(checked) {
+    setToggle(checked);
+  }
+
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={selectedTheme}>
       <Container>
         <GlobalStyle />
         <DashboardHeader>
@@ -54,7 +62,7 @@ function App() {
           </DashboardHeaderText>
           <DarkMode>
             <p>Dark Mode</p>
-            <Switch checked={false} checkedIcon={false} uncheckedIcon={false}/>
+            <Switch onChange={handleSwitch} checked={toggle} checkedIcon={false} uncheckedIcon={false}/>
           </DarkMode>
         </DashboardHeader>
         <CardWrapper>
