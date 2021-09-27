@@ -8,6 +8,7 @@ const colors = {
 }
 
 const MediumCard = styled.div`
+    cursor: pointer;
     width: 100%;
     padding-block: 2em;
     background-color: ${({theme}) => theme.cardBackground};

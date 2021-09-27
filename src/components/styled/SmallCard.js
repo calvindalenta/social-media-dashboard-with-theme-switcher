@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const SmallCard = styled.div`
+    cursor: pointer;
     background-color: ${({theme}) => theme.cardBackground};
     padding: 1.5em;
     display: flex;
