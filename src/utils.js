@@ -6,3 +6,8 @@ export function appendIfBigger(value){
 export function resolveIconPath(type){
     return type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
 }
+
+export function resolveSocialImagePath(platform){
+    const socialIcon = `images/icon-${platform}.svg`
+    return socialIcon;
+}

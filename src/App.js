@@ -16,12 +16,7 @@ import DarkMode from './components/styled/DarkMode';
 
 import Switch from "react-switch";
 import { useState } from 'react';
-
-
-function resolveSocialImage(platform){
-  const socialIcon = `images/icon-${platform}.svg`
-  return socialIcon;
-}
+import { resolveSocialImagePath } from './utils';
 
 function App() {
 
@@ -29,7 +24,7 @@ function App() {
     return <SocialCard
       key={data.followers * data.userName.length}
       platform={data.platform}
-      socialIcon={resolveSocialImage(data.platform)}
+      socialIcon={resolveSocialImagePath(data.platform)}
       userName={data.userName}
       followers={data.followers}
       followerType={data.followerType}
@@ -40,7 +35,7 @@ function App() {
   const overviewCards = overviewCardData.map(data => {
     return <OverviewCard
       data={data}
-      socialIcon={resolveSocialImage(data.platform)}
+      socialIcon={resolveSocialImagePath(data.platform)}
     />
   });
 
