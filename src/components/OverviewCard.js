@@ -8,11 +8,16 @@ export default function OverviewCard({data, socialIcon}){
 
     const trendIcon = data.trend.type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
 
+    let numberText = data.number;
+    if (data.number >= 10000) {
+        numberText = (Math.round(data.number / 1000) + 'K');
+    }
+    
     return (
         <SmallCard>
             <div>
                 <p>{data.type}</p>
-                <h2>{data.number}</h2>
+                <h2>{numberText}</h2>
             </div>
             <div>
                 <SocialImage src={socialIcon} alt="Icon"/>

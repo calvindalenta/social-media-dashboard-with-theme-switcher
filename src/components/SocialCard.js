@@ -9,6 +9,11 @@ import SocialImage from './styled/SocialImage';
 export default function SocialCard({platform, socialIcon, userName, followers, followerType, trend}){
 
     const trendIcon = trend.type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
+    
+    let followersText = followers;
+    if (followers >= 10000) {
+        followersText = (Math.round(followers / 1000) + 'K');
+    }
 
     return (
         <MediumCard platform={platform}>
@@ -17,7 +22,7 @@ export default function SocialCard({platform, socialIcon, userName, followers, f
                 <p>{userName}</p>
             </Account>
             <Followers>
-                <h1>{followers}</h1>
+                <h1>{followersText}</h1>
                 <p>{followerType}</p>
             </Followers>
             <Trend type={trend.type}>
