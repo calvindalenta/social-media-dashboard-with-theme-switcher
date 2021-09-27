@@ -8,7 +8,7 @@ const Trend = styled.div`
 
     p {
         font-weight: 700;
-        color: hsl(163, 72%, 41%);
+        color: ${({type}) => type === 'up' ? 'hsl(163, 72%, 41%)' : 'hsl(356, 69%, 56%)'};
     }
 `
 
