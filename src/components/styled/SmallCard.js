@@ -28,16 +28,10 @@ const SmallCard = styled.div`
     }
 
     & > div:last-child {
-        /* background-color: blue; */
-        /* text-align: right; */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-end;
-
-        & > img {
-            width: 2em;
-        }
     }
 `
 

@@ -10,14 +10,18 @@ import OverviewCard from './components/OverviewCard';
 import socialCardData from './data/socialCardData'; 
 import overviewCardData from './data/overviewCardData';
 
+function resolveSocialImage(platform){
+  const socialIcon = `images/icon-${platform}.svg`
+  return socialIcon;
+}
+
 function App() {
 
   const socialCards = socialCardData.map(data => {
-    const socialIcon = `images/icon-${data.platform}.svg`
     return <SocialCard
       key={data.followers * data.userName.length}
       platform={data.platform}
-      socialIcon={socialIcon}
+      socialIcon={resolveSocialImage(data.platform)}
       userName={data.userName}
       followers={data.followers}
       followerType={data.followerType}
@@ -26,10 +30,9 @@ function App() {
   });
 
   const overviewCards = overviewCardData.map(data => {
-    const socialIcon = `images/icon-${data.platform}.svg`
     return <OverviewCard
       data={data}
-      socialIcon={socialIcon}
+      socialIcon={resolveSocialImage(data.platform)}
     />
   });
 

@@ -4,6 +4,7 @@ import MediumCard from "./styled/MediumCard";
 import Account from "./styled/Account";
 import Followers from "./styled/Followers";
 import Trend from "./styled/Trend";
+import SocialImage from './styled/SocialImage';
 
 export default function SocialCard({platform, socialIcon, userName, followers, followerType, trend}){
 
@@ -12,7 +13,7 @@ export default function SocialCard({platform, socialIcon, userName, followers, f
     return (
         <MediumCard platform={platform}>
             <Account>
-                <img src={socialIcon} alt="Icon"/>
+                <SocialImage src={socialIcon} alt="Icon"/>
                 <p>{userName}</p>
             </Account>
             <Followers>

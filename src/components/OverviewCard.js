@@ -1,6 +1,7 @@
 import { objectOf, number, string } from 'prop-types';
 
 import SmallCard from './styled/SmallCard';
+import SocialImage from './styled/SocialImage';
 import Trend from './styled/Trend';
 
 export default function OverviewCard({data, socialIcon}){
@@ -14,7 +15,7 @@ export default function OverviewCard({data, socialIcon}){
                 <h2>{data.number}</h2>
             </div>
             <div>
-                <img src={socialIcon} alt="Icon"/>
+                <SocialImage src={socialIcon} alt="Icon"/>
                 <Trend type={data.trend.type}>
                     <img src={trendIcon} alt="Trend Icon" />
                     <p>{data.trend.text}</p>

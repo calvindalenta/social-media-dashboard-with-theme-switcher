@@ -10,10 +10,6 @@ const Account = styled.div`
         font-weight: 700;
         color: ${({theme}) => theme.secondaryText};
     }
-
-    img {
-        width: 1.8em;
-    }
 `
 
 export default Account;
