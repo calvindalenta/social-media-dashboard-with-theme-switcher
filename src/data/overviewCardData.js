@@ -72,3 +72,5 @@ const overviewCardData = [
         } 
     },
 ];
+
+export default overviewCardData;

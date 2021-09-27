@@ -5,9 +5,10 @@ import { darkTheme } from './components/styled/Theme';
 import Container from './components/styled/Container';
 import CardWrapper from './components/styled/CardWrapper';
 import SocialCard from './components/SocialCard';
+import OverviewCard from './components/OverviewCard';
 
 import socialCardData from './data/socialCardData'; 
-import OverviewCard from './components/OverviewCard';
+import overviewCardData from './data/overviewCardData';
 
 function App() {
 
@@ -24,6 +25,14 @@ function App() {
     />
   });
 
+  const overviewCards = overviewCardData.map(data => {
+    const socialIcon = `images/icon-${data.platform}.svg`
+    return <OverviewCard
+      data={data}
+      socialIcon={socialIcon}
+    />
+  });
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Container>
@@ -32,7 +41,7 @@ function App() {
           {socialCards}
         </CardWrapper>
         <CardWrapper>
-          <OverviewCard />
+          {overviewCards}
         </CardWrapper>
       </Container>
     </ThemeProvider>
