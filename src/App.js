@@ -34,6 +34,7 @@ function App() {
 
   const overviewCards = overviewCardData.map(data => {
     return <OverviewCard
+      key={data.number + data.trend.text}
       data={data}
       socialIcon={resolveSocialImagePath(data.platform)}
     />
