@@ -9,6 +9,7 @@ import OverviewCard from './components/OverviewCard';
 
 import socialCardData from './data/socialCardData'; 
 import overviewCardData from './data/overviewCardData';
+import OverviewHeader from './components/styled/OverviewHeader';
 
 function resolveSocialImage(platform){
   const socialIcon = `images/icon-${platform}.svg`
@@ -43,6 +44,7 @@ function App() {
         <CardWrapper>
           {socialCards}
         </CardWrapper>
+        <OverviewHeader>Overview - Today </OverviewHeader>
         <CardWrapper>
           {overviewCards}
         </CardWrapper>
