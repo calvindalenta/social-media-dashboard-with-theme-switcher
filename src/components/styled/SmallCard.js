@@ -11,6 +11,10 @@ const SmallCard = styled.div`
         /* border: 1px solid white; */
     }
 
+    &:hover {
+        background-color: ${({theme}) => theme.cardBackgroundHover};
+    }
+
     & > div:first-child {
         text-align: left;
         /* background-color: red; */

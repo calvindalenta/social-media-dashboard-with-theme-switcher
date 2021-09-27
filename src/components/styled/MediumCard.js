@@ -20,6 +20,10 @@ const MediumCard = styled.div`
     border-width: 3px 0 0 0;
     border-image-slice: 9;
     border-style: solid;
+
+    &:hover {
+        background-color: ${({theme}) => theme.cardBackgroundHover};
+    }
 `
 
 export default MediumCard;
