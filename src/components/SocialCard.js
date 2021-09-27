@@ -5,13 +5,13 @@ import Account from "./styled/Account";
 import Followers from "./styled/Followers";
 import Trend from "./styled/Trend";
 import SocialImage from './styled/SocialImage';
-import { appendIfBigger } from '../utils';
+import { appendIfBigger, resolveIconPath } from '../utils';
 
 export default function SocialCard({platform, socialIcon, userName, followers, followerType, trend}){
 
-    const trendIcon = trend.type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
+    const trendIcon = resolveIconPath(trend.type);
     
-    let followersText = appendIfBigger(followers);
+    const followersText = appendIfBigger(followers);
     
     return (
         <MediumCard platform={platform}>

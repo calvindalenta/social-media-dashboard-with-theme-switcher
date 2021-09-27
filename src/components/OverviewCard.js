@@ -1,5 +1,5 @@
 import { objectOf, number, string } from 'prop-types';
-import { appendIfBigger } from '../utils';
+import { appendIfBigger, resolveIconPath } from '../utils';
 
 import SmallCard from './styled/SmallCard';
 import SocialImage from './styled/SocialImage';
@@ -7,9 +7,9 @@ import Trend from './styled/Trend';
 
 export default function OverviewCard({data, socialIcon}){
 
-    const trendIcon = data.trend.type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
+    const trendIcon = resolveIconPath(data.trend.type)
 
-    let numberText = appendIfBigger(data.number);
+    const numberText = appendIfBigger(data.number);
 
     return (
         <SmallCard>
