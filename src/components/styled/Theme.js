@@ -4,3 +4,10 @@ export const darkTheme = {
     mainText: 'hsl(0, 0%, 100%)',
     secondaryText: 'hsl(228, 34%, 66%)',
 }
+
+export const lightTheme = {
+    background: 'hsl(0, 0%, 100%)',
+    cardBackground: 'hsl(227, 47%, 96%)',
+    mainText: 'hsl(230, 17%, 14%)',
+    secondaryText: 'hsl(228, 12%, 44%)',
+}
