@@ -10,6 +10,9 @@ import OverviewCard from './components/OverviewCard';
 import socialCardData from './data/socialCardData'; 
 import overviewCardData from './data/overviewCardData';
 import OverviewHeader from './components/styled/OverviewHeader';
+import DashboardHeader from './components/styled/DashboardHeader';
+import DashboardHeaderText from './components/styled/DashboardHeaderText';
+import DarkMode from './components/styled/DarkMode';
 
 function resolveSocialImage(platform){
   const socialIcon = `images/icon-${platform}.svg`
@@ -41,6 +44,15 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <Container>
         <GlobalStyle />
+        <DashboardHeader>
+          <DashboardHeaderText>
+            <h1>Social Media Dashboard</h1>
+            <p>Total Followers: 23,004</p>
+          </DashboardHeaderText>
+          <DarkMode>
+            <p>Dark Mode</p>
+          </DarkMode>
+        </DashboardHeader>
         <CardWrapper>
           {socialCards}
         </CardWrapper>
