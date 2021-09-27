@@ -1,4 +1,5 @@
 import { objectOf, number, string } from 'prop-types';
+import { appendIfBigger } from '../utils';
 
 import SmallCard from './styled/SmallCard';
 import SocialImage from './styled/SocialImage';
@@ -8,11 +9,8 @@ export default function OverviewCard({data, socialIcon}){
 
     const trendIcon = data.trend.type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
 
-    let numberText = data.number;
-    if (data.number >= 10000) {
-        numberText = (Math.round(data.number / 1000) + 'K');
-    }
-    
+    let numberText = appendIfBigger(data.number);
+
     return (
         <SmallCard>
             <div>

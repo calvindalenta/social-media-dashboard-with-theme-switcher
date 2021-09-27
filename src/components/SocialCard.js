@@ -5,16 +5,14 @@ import Account from "./styled/Account";
 import Followers from "./styled/Followers";
 import Trend from "./styled/Trend";
 import SocialImage from './styled/SocialImage';
+import { appendIfBigger } from '../utils';
 
 export default function SocialCard({platform, socialIcon, userName, followers, followerType, trend}){
 
     const trendIcon = trend.type === 'up' ? "images/icon-up.svg" : "images/icon-down.svg";
     
-    let followersText = followers;
-    if (followers >= 10000) {
-        followersText = (Math.round(followers / 1000) + 'K');
-    }
-
+    let followersText = appendIfBigger(followers);
+    
     return (
         <MediumCard platform={platform}>
             <Account>
