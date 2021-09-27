@@ -44,7 +44,7 @@ function App() {
     />
   });
 
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   const selectedTheme = toggle ? darkTheme : lightTheme;
 
   function handleSwitch(checked) {
