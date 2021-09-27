@@ -7,6 +7,7 @@ import CardWrapper from './components/styled/CardWrapper';
 import SocialCard from './components/SocialCard';
 
 import socialCardData from './data/socialCardData'; 
+import OverviewCard from './components/OverviewCard';
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
         <GlobalStyle />
         <CardWrapper>
           {socialCards}
+        </CardWrapper>
+        <CardWrapper>
+          <OverviewCard />
         </CardWrapper>
       </Container>
     </ThemeProvider>
