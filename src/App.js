@@ -14,6 +14,9 @@ import DashboardHeader from './components/styled/DashboardHeader';
 import DashboardHeaderText from './components/styled/DashboardHeaderText';
 import DarkMode from './components/styled/DarkMode';
 
+import Switch from "react-switch";
+
+
 function resolveSocialImage(platform){
   const socialIcon = `images/icon-${platform}.svg`
   return socialIcon;
@@ -51,6 +54,7 @@ function App() {
           </DashboardHeaderText>
           <DarkMode>
             <p>Dark Mode</p>
+            <Switch checked={false} checkedIcon={false} uncheckedIcon={false}/>
           </DarkMode>
         </DashboardHeader>
         <CardWrapper>
